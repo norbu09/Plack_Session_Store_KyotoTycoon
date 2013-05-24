@@ -159,4 +159,4 @@ L<http://cpanratings.perl.org/d/Plack::Session::Store::KyotoTycoon>
 
 =cut
 
-1;  # End of Plack::Session::Store::KyotoTycoon
+1;    # End of Plack::Session::Store::KyotoTycoon
