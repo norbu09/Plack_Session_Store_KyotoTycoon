@@ -1,0 +1,43 @@
+{
+   "abstract" : "Plack::Session storage for Kyoto Tycoon",
+   "author" : [
+      "Lenz Gschwendtner <lenz@springtimesoft.com>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Plack-Session-Store-KyotoTycoon",
+   "prereqs" : {
+      "build" : {
+         "requires" : {}
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Cache::KyotoTycoon" : "0",
+            "MIME::Base64" : "0",
+            "Plack::Session::Store" : "0",
+            "Storable" : "0",
+            "Try::Tiny" : "0",
+            "parent" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "repository" : {
+         "url" : "git://github.com/norbu09/Plack_Session_Store_KyotoTycoon.git"
+      }
+   },
+   "version" : "0.1"
+}

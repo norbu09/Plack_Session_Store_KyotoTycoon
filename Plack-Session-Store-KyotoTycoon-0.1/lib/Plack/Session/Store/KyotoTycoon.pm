@@ -8,24 +8,10 @@ use MIME::Base64 qw(encode_base64 decode_base64);
 
 # ABSTRACT: Plack::Session storage for Kyoto Tycoon
 
-# VERSION
+our $VERSION = '0.1'; # VERSION
 
 use parent 'Plack::Session::Store';
 
-=head1 SYNOPSIS
-
-See the docs for B<Plack::Session::Store::*> for details on how to use
-this.
-
-
-=head1 SUBROUTINES/METHODS
-
-=head2 B<new ( %params )>
-
-Parameters are tycoon_server and tycoon_port. See the B<Cache::KyotoTycoon> and
-Kyoto Tycoon docs for details.
-
-=cut
 
 sub new {
     my ($class, %params) = @_;
@@ -35,9 +21,6 @@ sub new {
     return bless {%params} => $class;
 }
 
-=head2 B<fetch ( $session_id )>
- 
-=cut
 
 sub fetch {
     my ($self, $key) = @_;
@@ -59,9 +42,6 @@ sub fetch {
     return;
 }
 
-=head2 B<store ( $session_id, $session )>
-
-=cut
 
 sub store {
     my ($self, $key, $data, $expire) = @_;
@@ -82,9 +62,6 @@ sub store {
     return;
 }
 
-=head2 B<remove ( $session_id )>
-
-=cut
 
 sub remove {
     my ($self, $key) = @_;
@@ -112,18 +89,49 @@ sub _verify_tycoon_connection {
     return;
 }
 
+
+1;  # End of Plack::Session::Store::KyotoTycoon
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Plack::Session::Store::KyotoTycoon - Plack::Session storage for Kyoto Tycoon
+
+=head1 VERSION
+
+version 0.1
+
+=head1 SYNOPSIS
+
+See the docs for B<Plack::Session::Store::*> for details on how to use
+this.
+
+=head1 SUBROUTINES/METHODS
+
+=head2 B<new ( %params )>
+
+Parameters are tycoon_server and tycoon_port. See the B<Cache::KyotoTycoon> and
+Kyoto Tycoon docs for details.
+
+=head2 B<fetch ( $session_id )>
+
+=head2 B<store ( $session_id, $session )>
+
+=head2 B<remove ( $session_id )>
+
 =head1 BUGS
 
 Please report any bugs or feature requests on GitHub's issue tracker L<https://github.com/<github_user>/Plack::Session::Store::KyotoTycoon/issues>.
 Pull requests welcome.
-
 
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc Plack::Session::Store::KyotoTycoon
-
 
 You can also look for information at:
 
@@ -147,7 +155,6 @@ L<http://cpanratings.perl.org/d/Plack::Session::Store::KyotoTycoon>
 
 =back
 
-
 =head1 ACKNOWLEDGEMENTS
 
 =over 4
@@ -156,6 +163,15 @@ L<http://cpanratings.perl.org/d/Plack::Session::Store::KyotoTycoon>
 
 =back
 
-=cut
+=head1 AUTHOR
 
-1;  # End of Plack::Session::Store::KyotoTycoon
+Lenz Gschwendtner <lenz@springtimesoft.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by springtimesoft LTD.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
