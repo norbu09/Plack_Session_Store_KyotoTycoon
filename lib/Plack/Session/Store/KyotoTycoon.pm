@@ -94,6 +94,7 @@ sub remove {
         $self->_verify_tycoon_connection;
         return $self->{tycoon}->remove($key);
     }
+    return;
 }
 
 sub _verify_tycoon_connection {
